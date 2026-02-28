@@ -1,4 +1,4 @@
-/* ── Reset & Box Model ───────────────────────── */
+/* ── Reset ───────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -7,57 +7,55 @@
 
 /* ── Design Tokens ───────────────────────────── */
 :root {
-  /* Fonts */
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
 
-  /* Colors */
-  --color-bg:           #0c0c14;
-  --color-surface:      #15151f;
-  --color-surface-warm: #1a1a28;
-  --color-primary:      #7c6af7;
-  --color-primary-light:#a78bfa;
-  --color-primary-dark: #5b4fcf;
-  --color-accent:       #f59e0b;
-  --color-text:         #e8e8f0;
-  --color-text-muted:   #8888aa;
-  --color-border:       #2a2a3e;
-  --color-footer:       #06060f;
+  /* Palette — single restrained accent, no competing gradients */
+  --color-bg:        #08080a;
+  --color-surface:   #101014;
+  --color-surface-2: #16161c;
+  --color-accent:    #7c5cfc;      /* single violet accent */
+  --color-accent-hi: #a48dff;      /* lighter tint — text on dark */
+  --color-gold:      #e8a325;      /* gold — used sparingly for badges only */
+  --color-text:      #ecedf0;
+  --color-text-2:    #8c8ca0;
+  --color-text-3:    #52525e;
+  --color-border:    rgba(255, 255, 255, 0.07);
+  --color-border-2:  rgba(255, 255, 255, 0.12);
+  --color-footer:    #040407;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #7c6af7 0%, #a78bfa 100%);
-  --gradient-soft:    linear-gradient(135deg, rgba(124, 106, 247, 0.14) 0%, rgba(124, 106, 247, 0.04) 100%);
-  --gradient-hero:    linear-gradient(145deg, #0f0e1c 0%, #13112a 50%, #0c0c14 100%);
+  /* Shadows — border-based, very restrained */
+  --shadow-card:     0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-raised:   0 0 0 1px rgba(255, 255, 255, 0.08), 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-accent:   0 0 0 1px rgba(124, 92, 252, 0.4), 0 8px 32px rgba(124, 92, 252, 0.15);
 
   /* Shape */
-  --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   24px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md:   0 8px 32px rgba(0, 0, 0, 0.45);
-  --shadow-lg:   0 16px 64px rgba(0, 0, 0, 0.55);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 40px rgba(124, 106, 247, 0.2);
-
   /* Layout */
-  --max-width:       1100px;
-  --section-padding: 96px 24px;
+  --max-width:    1080px;
+  --section-pad:  108px 24px;
 }
 
 /* ── Base ────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.03em;
+  line-height: 1.12;
 }
 
 a {

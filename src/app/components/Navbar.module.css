@@ -4,14 +4,14 @@
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.25s, border-color 0.25s;
 }
 
 .scrolled {
-  background: rgba(12, 12, 20, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 var(--color-border);
+  background: rgba(8, 8, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .inner {
@@ -24,19 +24,17 @@
 }
 
 .logo {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   gap: 7px;
+  letter-spacing: -0.02em;
 }
 
 .logoStar {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent-hi);
 }
 
 .links {
@@ -46,30 +44,28 @@
 }
 
 .links a {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  color: var(--color-text-muted);
-  transition: color 0.2s;
+  color: var(--color-text-2);
+  transition: color 0.15s;
 }
 
 .links a:hover {
-  color: var(--color-primary-light);
+  color: var(--color-text);
 }
 
 .cta {
-  background: var(--gradient-primary);
+  background: var(--color-accent);
   color: white;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  padding: 10px 22px;
+  padding: 9px 20px;
   border-radius: var(--radius-full);
-  transition: opacity 0.2s, transform 0.2s;
-  box-shadow: 0 4px 16px rgba(124, 106, 247, 0.35);
+  transition: background 0.15s;
 }
 
 .cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  background: #6a4de0;
 }
 
 @media (max-width: 640px) {
